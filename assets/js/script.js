@@ -42,13 +42,13 @@ createApp({
         }
 
     },
-    mounted() {
+    mounted() {//uso il loop for per generare dentro mounted 10 mail 
         for (let index = 0; index < 10; index++) {
 
             axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
                 .then(response => {
 
-
+                    //Pusho le mail nell'array vuoto
                     this.listMail.push(response.data.response);
                     console.log(listMail);
                 })
@@ -56,9 +56,6 @@ createApp({
 
         }
     },
-    methods: {
-
-      
-    }
+    
 
 }).mount('#app');
