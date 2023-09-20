@@ -34,7 +34,39 @@ const {createApp} = Vue;
     createApp({
         data(){
             return{
-                email: '',
+                emails: [
+                    {
+                        email: '',
+                    },
+                    {
+                        email: '',
+                    },
+                    {
+                        email: '',
+                    },
+                    {
+                        email: '',
+                    },
+                    {
+                        email: '',
+                    },
+                    {
+                        email: '',
+                    },
+                    {
+                        email: '',
+                    },
+                    {
+                        email: '',
+                    },
+                    {
+                        email: '',
+                    },
+                    {
+                        email: '',
+                    },
+                ]
+                
                 
             }
 
@@ -47,7 +79,8 @@ const {createApp} = Vue;
                 console.log(response.data);
                 console.log(response.data.response);
 
-                this.email = response.data.response;
+                this.emails.email = response.data.response;
+                console.log(this.emails.email);
 
 
 
