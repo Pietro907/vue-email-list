@@ -16,11 +16,12 @@
       
 
         <!-- <h1 class="text-center">Prova</h1> -->
-        
-        <!-- utlizzo il loop for in per prendere le mail dentro l'array e ne genero una ad una -->
-        <ul>
+        <!-- se la listMail.length arriva a 10 dieci mostra o con v-show -->
+        <ul v-if="listMail.length == 10">
+            <!-- utilizzo il loop for in per prendere le mail dentro l'array e ne genero una ad una -->
             <!-- le stampo -->
-            <li class="py-3" v-for="(email, index) in listMail">{{email}}</li>
+            <li class="py-3" v-for="(email, index) in listMail" >{{email}}</li>
+
         </ul>
 
 
