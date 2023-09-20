@@ -29,63 +29,36 @@ dové la CDN di axios? https://cdnjs.com/libraries/axios
 */
 
 
-const {createApp} = Vue;
+const { createApp } = Vue;
 
-    createApp({
-        data(){
-            return{
-                emails: [
-                    {
-                        email: '',
-                    },
-                    {
-                        email: '',
-                    },
-                    {
-                        email: '',
-                    },
-                    {
-                        email: '',
-                    },
-                    {
-                        email: '',
-                    },
-                    {
-                        email: '',
-                    },
-                    {
-                        email: '',
-                    },
-                    {
-                        email: '',
-                    },
-                    {
-                        email: '',
-                    },
-                    {
-                        email: '',
-                    },
-                ]
-                
-                
-            }
+createApp({
+    data() {
+        return {
+            
 
-        },
-        mounted(){
-            axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-            .then(response => {
-    
-                console.log(response);
-                console.log(response.data);
-                console.log(response.data.response);
-
-                this.emails.email = response.data.response;
-                console.log(this.emails.email);
+            listMail: [],
 
 
-
-            })
         }
 
+    },
+    mounted() {
+        for (let index = 0; index < 10; index++) {
 
-    }).mount('#app');
+            axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+                .then(response => {
+
+
+                    this.listMail.push(response.data.response);
+                    console.log(listMail);
+                })
+
+
+        }
+    },
+    methods: {
+
+      
+    }
+
+}).mount('#app');
