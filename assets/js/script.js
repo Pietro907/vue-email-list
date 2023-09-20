@@ -46,6 +46,11 @@ const {createApp} = Vue;
                 console.log(response);
                 console.log(response.data);
                 console.log(response.data.response);
+
+                this.email = response.data.response;
+
+
+
             })
         }
 
