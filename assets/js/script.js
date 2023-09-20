@@ -42,15 +42,19 @@ createApp({
         }
 
     },
-    mounted() {//uso il loop for per generare dentro mounted 10 mail 
+    mounted() {
+        
+        //uso il loop for per generare dentro mounted 10 mail 
         for (let index = 0; index < 10; index++) {
 
+            //con il metodo .get prendo l'url
             axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+            //allora una volta preso url
                 .then(response => {
 
                     //Pusho le mail nell'array vuoto
                     this.listMail.push(response.data.response);
-                    console.log(listMail);
+                    
                 })
 
 
